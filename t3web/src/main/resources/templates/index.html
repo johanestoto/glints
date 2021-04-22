@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+		    <link rel="stylesheet" href="css/app-layout.css" />
+	</head>
+	<body>
+			<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+			<a class="navbar-brand" href="/">Tic Tac Toe</a>
+
+		</nav>
+		<div class="formcontainer">
+		    <center> <img alt="" src="/images/tic-tac-toe.png" width="100px" height="100px" ></center>
+			<form class="form mt-4" th:action="@{/option}"  th:object="${gameSelection}" method="post">
+					<table class="table">
+					  <tbody>
+ 				       <tr>
+					      <td >Board Dimension (Minimum value is 3)</td>
+					      <td><input type="text" class="form-control" th:field="*{dimension}" placeholder="dimension"> <div class="alert alert-warning" th:if="${#fields.hasErrors('dimension')}" th:errors="*{dimension}"></div> </td>
+					    </tr> 
+					    <tr>
+					      <td  >Opponent Type</td>
+					      <td> 
+                          		<select class="form-control selectpicker" th:field="*{gameType}" id="gameType">
+			                        <option value="">Nothing selected</option>
+			                        <option th:each="gameType : ${T(com.glints.toto.model.GameType).values()}"
+			                                th:value="${gameType}"
+			                                th:text="${gameType}">gameType
+			                        </option>
+			                    </select>
+			                    <div class="alert alert-warning" th:if="${#fields.hasErrors('gameType')}" th:errors="*{gameType}"></div> 
+					      </td>
+					    </tr>    
+					    <tr>
+					      <td colspan="2">	<button type="submit" class="btn btn-primary">Submit</button></td>
+					    </tr>
+					  </tbody>
+					</table>
+			</form>
+		</div>
+	</body>
+</html>

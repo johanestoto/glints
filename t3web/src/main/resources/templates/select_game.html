@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+		    <link rel="stylesheet" href="css/app-layout.css" />
+	</head>
+	<body>
+			<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+			<a class="navbar-brand" href="/">Tic Tac Toe</a>
+
+		</nav>
+		<div class="formcontainer">
+		    <center> <img alt="" src="/images/tic-tac-toe.png" width="100px" height="100px" ></center>
+			<form class="form mt-4" th:action="@{/human}"  method="post">
+					<table class="table">
+					  <tbody>
+ 				       <tr>
+					      <td >Existing Opponent</td>
+					      <td> <span th:text="${game.existingOpponent}"  > </td>
+					    </tr> 
+					    <tr>
+					      <td colspan="2">	<button type="submit" class="btn btn-primary">Lets get it on!</button></td>
+					    </tr>
+					  </tbody>
+					</table>
+			</form>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />			
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	</head>
+	<body>
+		<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+			<a class="navbar-brand" href="/">Tic Tac Toe</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+						</li>
+			     
+					</ul>
+				</div>
+		</nav>
+		<div class="container">
+		    <center> <img alt="" src="/images/tic-tac-toe.png" width="100px" height="100px" ></center>
+			<form class="form mt-4" th:action="@{/select_game}" th:object="${user}" method="post">
+				<div class="form-group">
+					<label>Enter your username to join game:</label>
+					<input type="text" class="form-control" th:field="*{username}" placeholder="username">
+					<div class="alert alert-warning" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></div>
+				</div>
+				<button id="connect" type="submit" class="btn btn-primary">Submit</button>
+			</form>
+		</div>
+	</body>
+</html>
