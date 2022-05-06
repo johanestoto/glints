@@ -1,4 +1,4 @@
-# glints
+# TicTacToe
 1. Created using Java Spring Boot, so after downloading source code , It can be run on Your local machine and access through Web Browser on http://localhost:8080
 2. The Tic Tac Toe game is configurable by supplying Board Dimension before playing game on the Web in any value greater than 3. (I restrict the board dimension greater than 3 to have a good experience on game). So you can freely input 3 x 3, 4 x 4, 5 x 5 and any value. Dimension is not harcoded, its dynamic.
 3. The game has 2 option, which are COMPUTER opponent and HUMAN opponent
