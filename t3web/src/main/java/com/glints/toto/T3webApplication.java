@@ -8,6 +8,7 @@ public class T3webApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(T3webApplication.class, args);
+		//test
 	}
 
 }
